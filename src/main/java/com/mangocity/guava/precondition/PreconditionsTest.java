@@ -14,7 +14,7 @@ public class PreconditionsTest {
 		System.out.println("haha");
 		
 		//Preconditions.checkArgument(false, "自定义参数错误");
-		//Preconditions.checkNotNull(null, "自定义NotNull");
+		Preconditions.checkNotNull(null, "自定义NotNull");
 		//Preconditions.checkState(false);//抛出IllegalStateException
 		//Preconditions.checkElementIndex(4, 4);//index不能大于size
 	}
