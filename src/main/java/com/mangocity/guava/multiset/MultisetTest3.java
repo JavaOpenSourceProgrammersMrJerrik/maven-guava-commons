@@ -1,4 +1,4 @@
-package com.mangocity.guava.immutable;
+package com.mangocity.guava.multiset;
 
 import java.util.Arrays;
 
@@ -15,7 +15,7 @@ TreeMultiset:元素被排序存放于TreeMap
 EnumMultiset: 元素必须是 enum 类型
 ImmutableMultiset: 不可修改的 Mutiset
  */
-public class MultisetTest {
+public class MultisetTest3 {
 
 	@Test
 	public void testMultiSet() {
