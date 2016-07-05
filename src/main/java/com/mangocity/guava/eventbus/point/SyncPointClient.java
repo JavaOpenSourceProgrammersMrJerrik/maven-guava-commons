@@ -1,5 +1,7 @@
 package com.mangocity.guava.eventbus.point;
 
+import java.util.concurrent.TimeUnit;
+
 import com.google.common.eventbus.EventBus;
 
 public class SyncPointClient {
@@ -7,9 +9,13 @@ public class SyncPointClient {
 	static EventBus eventBus = new EventBus("Point_Sync");
 
 	static PointSubscriber pointSubscriber;
+	
+	static PointDescSubscriber pointDescscriber;
 	static {
 		pointSubscriber = new PointSubscriber();
+		pointDescscriber = new PointDescSubscriber();
 		eventBus.register(pointSubscriber);
+		eventBus.register(pointDescscriber);
 	}
 
 	public static void main(String[] args) {
@@ -22,11 +28,14 @@ public class SyncPointClient {
 		long start = System.currentTimeMillis();
 
 		eventBus.post(new PointEvent(mbrId, points, desc));
-		/*
-		 * eventBus.post(new PointEvent(234234L, 134764D, "购买机票"));
-		 * eventBus.post(new PointEvent(4412312L, 434332D, "购买邮轮"));
-		 */
-
+		
+		try {
+			TimeUnit.SECONDS.sleep(2);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		eventBus.post("HelloWorld");
 		System.out.println("CostTime: " + (System.currentTimeMillis() - start) / 1000.0);
 	}
 

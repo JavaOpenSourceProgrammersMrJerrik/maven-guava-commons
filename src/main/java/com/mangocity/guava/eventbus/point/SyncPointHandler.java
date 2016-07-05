@@ -8,6 +8,7 @@ public class SyncPointHandler {
 		System.out.println("sync points begin{}");
 		try {
 			TimeUnit.SECONDS.sleep(5);
+			System.out.println("sync points end{}");
 		} catch (InterruptedException e) {
 		}
 	}
