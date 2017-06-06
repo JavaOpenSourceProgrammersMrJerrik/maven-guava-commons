@@ -11,9 +11,8 @@ public class SyncQueueTester {
 			new SynchronousQueue<Runnable>(), new ThreadPoolExecutor.DiscardPolicy());
 
 	public static void main(String[] args) throws InterruptedException {
-		for (int i = 0; i < 20; i++) {
+		for (int i = 0; i < 200; i++) {
 			kickOffEntry(i);
-
 			Thread.sleep(200);
 		}
 
@@ -24,8 +23,8 @@ public class SyncQueueTester {
 		executor.submit(new Callable<Void>() {
 			public Void call() throws InterruptedException {
 				System.out.println("start " + index);
-				Thread.sleep(1000); // pretend to do work
-				System.out.println("stop " + index);
+				Thread.sleep(2000); // pretend to do work
+				//System.out.println("stop " + index);
 				return null;
 			}
 		});

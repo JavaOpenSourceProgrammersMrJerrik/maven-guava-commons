@@ -8,11 +8,11 @@ public class SynchronousQueueTester {
 	public static void main(String[] args) throws InterruptedException {
 		final SynchronousQueue<String> sQueue = new SynchronousQueue<String>(false);
 		
-	/*	Thread producer = new Thread(new Producer(sQueue));
+		Thread producer = new Thread(new Producer(sQueue));
 		Thread consumer = new Thread(new Consumer(sQueue));
 
 		producer.start();
-		consumer.start();*/
+		consumer.start();
 	}
 
 	private static void offerElement(final SynchronousQueue<String> sQueue) {
